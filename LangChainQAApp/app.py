@@ -1,5 +1,4 @@
 import streamlit as st
-import openai
 
 from langchain.llms import AzureOpenAI  # Import Azure OpenAI
 from dotenv import dotenv_values
@@ -8,9 +7,6 @@ from dotenv import dotenv_values
 config_details = dotenv_values(".env")
 
 ########################################### Azure Open AI ###########################################
-openai.api_type = "azure"
-openai.api_base = config_details['OPENAI_API_BASE']
-openai.api_version = config_details['OPENAI_API_VERSION']
 
 # Function to return the response
 
@@ -24,8 +20,8 @@ def load_answer(question):
 
 
 # App UI starts here
-st.set_page_config(page_title="Lang Chain Demo", page_icon=":robot:")
-st.header("Lang Chain Demo")
+st.set_page_config(page_title="LangChain Demo", page_icon=":robot:")
+st.header("LangChain Demo")
 
 # Gets the user input
 
